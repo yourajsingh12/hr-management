@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Employee List</title>
+<!-- Include Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<section>
+  <h1 class="text-center my-4">All Employee</h1>
+  <hr>
+  <div class="container-fluid mt-3 table-container">
+   <table id="example" class="table table-striped" style="width:100%">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Employee-Name</th>
+      <th>Gender</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Date of Birthday</th>
+      <th>Joining Date</th>
+      <th>Aadhaar</th>
+      <th>Account</th>
+      <th>Previous Company</th>
+      <th>PF No</th>
+      <th>Salary</th>
+      <th>Current-Address</th>
+      <th>Permament-Address</th>
+      <th>Department</th>
+      <th>Designation</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="e : ${allemployee}">
+      <td th:text="'HMP' + ${e.id}"></td>
+      <td th:text="${e.employeeName}"></td>
+      <td th:text="${e.gender}"></td>
+      <td th:text="${e.mobile}"></td>
+      <td th:text="${e.email}"></td>
+      <td th:text="${e.dateOfBirth}"></td>
+      <td th:text="${e.joiningDate}"></td>
+      <td th:text="${e.aadhaarNo}"></td>
+      <td th:text="${e.accountNo}"></td>
+      <td th:text="${e.previousCompany}"></td>
+      <td th:text="${e.pfNumber}"></td>
+      <td th:text="${e.salary}"></td>
+      <td th:text="${e.currentAddress}"></td>
+      <td th:text="${e.permanentAddress}"></td>
+      <td th:text="${e.department}"></td>
+      <td th:text="${e.designation}"></td>
+      <td th:text="${e.status}"></td>
+      <td>
+        <i th:onclick="'editRecord(' + ${e.id} + ')'" 
+       class="fa-solid fa-pen-to-square ms-2" 
+       style="color:blue; cursor:pointer;"></i>
+        <i th:onclick="'deleteRecord(' + ${e.id} + ')'" 
+        class="fa-regular fa-trash-can ms-2" style="color:red;cursor:pointer;"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</section>
+
+</body>
+</html>

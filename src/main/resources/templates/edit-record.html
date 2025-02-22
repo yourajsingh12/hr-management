@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <!-- Bootstrap CSS -->
+    
+</head>
+<body>
+<section class="container mt-5" >
+    <h1 class="text-center mb-4">Employee Update Form</h1>
+    <form th:action="@{/edit-employee}"  method="post" class="row g-3 needs-validation" >
+    <input type="id" name="id" th:value="${employee.id}" >
+        <!-- Employee Name -->
+        <div class="col-md-6">
+            <label for="name" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="employeeName" name="employeeName" th:value="${employee.employeeName}"     placeholder="Enter full name" required>
+            <div class="invalid-feedback">
+                Please provide a valid name.
+            </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="col-md-6">
+            <label class="form-label">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="male" name="gender" th:checked="${employee.gender =='Male'}" value="Male" required>
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="female" name="gender" th:checked="${employee.gender =='Female'}"   value="Female" required>
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="invalid-feedback">
+                Please select a gender.
+            </div>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="col-md-6">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control" id="mobile" name="mobile" th:value="${employee.mobile}"  placeholder="Enter mobile number" required>
+            <div class="invalid-feedback">
+                Please provide a valid mobile number.
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" th:value="${employee.email}" placeholder="Enter email" required>
+            <div class="invalid-feedback">
+                Please provide a valid email address.
+            </div>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="col-md-6">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" th:value="${employee.dateOfBirth}" required>
+            <div class="invalid-feedback">
+                Please provide a valid date of birth.
+            </div>
+        </div>
+
+        <!-- Joining Date -->
+        <div class="col-md-6">
+            <label for="joiningDate" class="form-label">Joining Date</label>
+            <input type="date" class="form-control" id="joiningDate" name="joiningDate" th:value="${employee.joiningDate}" required>
+            <div class="invalid-feedback">
+                Please provide a joining date.
+            </div>
+        </div>
+
+        <!-- Aadhaar Number -->
+        <div class="col-md-6">
+            <label for="aadhaar" class="form-label">Aadhaar Number</label>
+            <input type="text" class="form-control" id="aadhaarNo" name="aadhaarNo" th:value="${employee.aadhaarNo}" placeholder="Enter Aadhaar number" required>
+            <div class="invalid-feedback">
+                Please provide a valid Aadhaar number.
+            </div>
+        </div>
+
+        <!-- Account Number -->
+        <div class="col-md-6">
+            <label for="account" class="form-label">Account Number</label>
+            <input type="text" class="form-control" id="accountNo" name="accountNo" th:value="${employee.accountNo}" placeholder="Enter account number" required>
+            <div class="invalid-feedback">
+                Please provide a valid account number.
+            </div>
+        </div>
+
+        <!-- Previous Company -->
+        <div class="col-md-6">
+            <label for="previousCompany" class="form-label">Previous Company</label>
+            <input type="text" class="form-control" id="previousCompany" name="previousCompany" th:value="${employee.previousCompany}" placeholder="Enter previous company name">
+        </div>
+
+        <!-- PF Number -->
+        <div class="col-md-6">
+            <label for="pfNumber" class="form-label">PF Number</label>
+            <input type="text" class="form-control" id="pfNumber" name="pfNumber" th:value="${employee.pfNumber}" placeholder="Enter PF number">
+        </div>
+
+        <!-- Salary -->
+        <div class="col-md-6">
+            <label for="salary" class="form-label">Salary</label>
+            <input type="number" class="form-control" id="salary" name="salary" th:value="${employee.salary}" placeholder="Enter salary" required>
+        </div>
+
+        <!-- Current Address -->
+        <div class="col-md-6">
+            <label for="currentAddress" class="form-label">Current Address</label>
+            <textarea class="form-control" id="currentAddress" name="currentAddress" th:text="${employee.currentAddress}" rows="2" placeholder="Enter current address" required></textarea>
+        </div>
+
+        <!-- Permanent Address -->
+        <div class="col-md-6">
+            <label for="permanentAddress" class="form-label">Permanent Address</label>
+            <textarea class="form-control" id="permanentAddress" name="permanentAddress" th:text="${employee.permanentAddress}" rows="2" placeholder="Enter permanent address" required></textarea>
+        </div>
+
+        <!-- Department Dropdown -->
+        <div class="col-md-6">
+        <label for="department" class="form-label">Department</label>
+        <select class="form-select" id="department" name="department" required>
+            <option value="">Select Department</option>
+            <option value="HR" th:selected="${employee.department == 'HR'}">HR</option>
+            <option value="Finance" th:selected="${employee.department == 'Finance'}">Finance</option>
+            <option value="IT" th:selected="${employee.department == 'IT'}">IT</option>
+            <option value="Marketing" th:selected="${employee.department == 'Marketing'}">Marketing</option>
+        </select>
+        <div class="invalid-feedback">Please select a department.</div>
+    </div>
+
+        <!-- Designation Dropdown -->
+     <div class="col-md-6">
+        <label for="designation" class="form-label">Designation</label>
+        <select class="form-select" id="designation" name="designation" required>
+            <option value="">Select Designation</option>
+            <option value="Manager" th:selected="${employee.designation == 'Manager'}">Manager</option>
+            <option value="Developer" th:selected="${employee.designation == 'Developer'}">Developer</option>
+            <option value="Analyst" th:selected="${employee.designation == 'Analyst'}">Analyst</option>
+            <option value="Intern" th:selected="${employee.designation == 'Intern'}">Intern</option>
+        </select>
+        <div class="invalid-feedback">Please select a designation.</div>
+    </div>
+
+        <!-- Active/Inactive Toggle -->
+        <div class="col-md-6">
+        <label class="form-label">Status</label>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="status" name="status" th:checked="${employee.status}" value="true">
+            <label class="form-check-label" for="status">Active</label>
+        </div>
+    </div>
+
+        <!-- Submit Button -->
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</section>
+
+<!-- Bootstrap JS -->
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" th:replace="~{userbase::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+
+<div class="row">
+            <div class="col-md-6 offset-md-3 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container text-center">
+                           <img alt="image" src="img/aasiqa.webp" style="height:120px; border-radius:50%;width:120px" >
+                             <h5 th:text="${employee.employeeName}"></h5>
+                             <h4 th:text="${employee.designation}"></h4>
+                        </div>
+                        <hr>
+                        <table class="table">
+                <tr>
+                    <td>Name</td>
+                    <td th:text="${employee.employeeName}"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td th:text="${employee.department}"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td th:text="${employee.email}"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td th:text="${employee.gender}">Male</td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td th:text="${employee.dateOfBirth}"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td th:text="${employee.currentAddress}"></td>
+                </tr>
+            </table>
+                    </div>
+                </div>
+             </div>
+        
+         </div>
+            
+
+</section>
+</body>
+</html>

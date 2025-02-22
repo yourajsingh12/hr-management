@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<section>
+  <h1 class="text-center my-4">Status</h1>
+  <hr>
+  <div class="container-fluid mt-3 table-container">
+   <table id="example" class="table table-striped" style="width:100%">
+  <thead>
+    <tr>
+      <th>S.no</th>
+      <th>Name</th>
+     
+      <th>Subject</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>For Approve</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="e : ${status}">
+      <td  th:text="${e.id}"></td>
+      <td th:text="${e.empName}"></td>
+      
+      <td th:text="${e.subject}" ></td>
+      <td th:text="${e.text}"></td>
+           <td th:text="${e.addedDate}"></td>
+      
+      
+      <td class="ms-2">
+       <i th:onclick="|approved(${e.id})|"    class="fa-solid fa-face-smile-beam ms-4"style="color:green; cursor:pointer;"></i>
+       <i th:onclick="|reject(${e.id})|" class="fa-solid fa-circle-xmark ms-4" style="color:red;cursor:pointer;"></i> 
+       <i th:onclick="|denied(${e.id})|" class="fa-solid fa-eye-slash ms-4 " style="color:yellow;cursor:pointer;"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</section>
+</section>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+
+<div class="row">
+
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body">
+                    <b>Development [8]</b>
+           </div>
+           
+       </div>
+ </div>
+  <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body">
+                    <b>Qa Testing [2]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body">
+                    <b>Networking [2]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body">
+                    <b>Hr Team [8]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body">
+                    <b>Security [8]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body">
+                    <b>Sales Marketing [8]</b>
+           </div>
+           
+       </div>
+ </div>
+</div>
+
+
+<div class="row">
+
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body bg-warning">
+                    <b style="color:white">Pendding12</b>
+           </div>
+           
+       </div>
+ </div>
+  <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body bg-success">
+                    <b style="color:white">Approved[12]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body bg-danger">
+                    <b style="color:white">Canceled[3]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body bg-dark">
+                    <b style="color:white"> Denied [8]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body bg-primary">
+                    <b style="color:white">All[38]</b>
+           </div>
+           
+       </div>
+ </div>
+ <div class="col-6 col-sm-2  mt-2">
+      <div class="card" style="cursor:pointer;"> 
+           <div class="card-body bg-info">
+                    <b style="color:white">Reminder[29]</b>
+           </div>
+           
+       </div>
+ </div>
+</div>
+
+
+
+<div class="row mb-5">
+  <div class="col-md-8 mt-3 ">
+     <div class="card">
+       <div class="card-body">
+         <h5>Recent Activity</h5>
+         <hr>
+        
+        <table id="example" class="table table-striped" style="width:100%">
+  <thead>
+    <tr>
+    
+      <th>Id</th>
+     <th>Name</th>
+    
+      <th>Subject</th>
+      <th>Description</th>
+      <th>Date</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="e : ${status}">
+     
+     <td th:text="${e.id}" ></td>
+     <td th:text="${e.empName}" ></td>
+    
+      <td th:text="${e.subject}" ></td>
+      <td th:text="${e.text}"></td>
+           <td th:text="${e.addedDate}"></td>
+      
+      
+      
+    </tr>
+  </tbody>
+</table>
+              
+       </div>
+     </div>
+  </div>
+  
+  <div class="col-md-4 mt-3">
+    <div class="card">
+        <div class="card-body text-center">
+          <h5>Up coming Birthday & Anivarsary</h5>
+          <hr>
+             <div class="d-flex justify-content-around w-100 mt-4">
+                <img src="img/body.png" style="width:45px;height:45px;border-radius:50%">
+                <b class="mt-2">yuvraj singh</b>
+                <i class="fa-solid fa-cake-candles mt-2"  style="color:red;"></i>
+                <span class="mt-2">3-5-2025</span>
+             </div>
+             
+             <div class="d-flex justify-content-around w-100 mt-4">
+                <img src="img/body2.png" style="width:45px;height:45px;border-radius:50%">
+                <b class="mt-2">sumit singh</b>
+                <i class="fa-solid fa-cake-candles mt-2"  style="color:red;"></i>
+                <span class="mt-2">3-5-2025</span>
+             </div>
+             
+             <div class="d-flex justify-content-around w-100 mt-4">
+                <img src="img/bodymark.png" style="width:45px;height:45px;border-radius:50%">
+                <b class="mt-2">abhishek singh</b>
+                <i class="fa-solid fa-gift mt-2" style="color:green"></i>
+                <span class="mt-2">3-5-2025</span>
+             </div>
+          
+         </div>
+    </div>
+  </div>
+</div>
+
+</section>
+</body>
+</html>

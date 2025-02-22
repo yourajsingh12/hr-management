@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{userbase::layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compose Form</title>
+  <!-- Bootstrap CSS -->
+ 
+</head>
+<body>
+<section class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-header text-center bg-primary text-white">
+          <h4>Compose Form</h4>
+        </div>
+        <div class="card-body">
+          <form th:action="@{/compose}" method="post">
+            <!-- Subject -->
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="subject" 
+                name="subject"
+                placeholder="Enter subject" 
+                required="required">
+            </div>
+
+            <!-- Comment -->
+            <div class="mb-3">
+              <label for="comment" class="form-label">Comment Details</label>
+              <textarea 
+                class="form-control" 
+                id="comment" 
+                rows="5" 
+                   name="text"
+                placeholder="Enter your comments here..." 
+                required="required"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+
+</body>
+</html>

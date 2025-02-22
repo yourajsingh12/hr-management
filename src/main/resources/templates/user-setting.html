@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" th:replace="~{userbase::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="container mt-5">
+    <h1 class="text-center mb-4">Forgot Password</h1>
+     <div class="alert alert-danger" role="alert" th:if="${error}">
+					  Password not matched
+					</div>
+    <form th:action="@{update-password}" method="POST" class="mx-auto" style="max-width: 400px;">
+      <div class="mb-3">
+        <label for="password" class="form-label">Old  Password</label>
+         <input 
+            class="form-control" 
+            type="password" 
+            name="password" 
+            id="password" 
+            required="required"
+                >
+        <input 
+            class="form-check-input" 
+            type="checkbox" 
+            
+            id="showPassword" 
+            onclick="document.getElementById('password').type = this.checked ? 'text' : 'password';"
+            
+                >
+          <label class="form-check-label" for="showPassword">
+            Show Password
+          </label>
+      </div>
+      
+     
+          
+        
+      
+      <div class="mb-3">
+        <label for="new-password" class="form-label">New  Password</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="newPassword1" 
+          name="newPassword1" 
+          placeholder="Enter your New password" 
+          required="required">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label"> Confirm Password</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="newPassword2" 
+          name="newPassword2" 
+          placeholder="Enter your Confirm password" 
+          required="required">
+      </div>
+      
+      <button type="submit" class="btn btn-primary w-100">Reset Password</button>
+    </form>
+  </section>
+</body>
+</html>
